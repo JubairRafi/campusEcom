@@ -12,6 +12,7 @@ class adminController extends Controller
         //echo "Success";
         return view('login.admin');
     }
+
     public function verify(Request $req){
         $users=adminModel::where('teacherId',$req->username)
                 ->where('password', $req->pass)
@@ -26,5 +27,10 @@ class adminController extends Controller
                     return redirect('/login');
                 }
     }
-    
+
+
+    public function adminDash(){
+        return view('admin.adminComodity');
+    }
+
 }
