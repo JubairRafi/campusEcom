@@ -9,5 +9,5 @@ class stmodel extends Model
     //
     protected $table = "User_table";
     protected $primaryKey =  "studentId";
-    public $timetamps = false;
+    public $timestamps  = false;
 }

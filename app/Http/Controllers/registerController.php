@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\stmodel;
 
 class registerController extends Controller
 {
@@ -10,19 +11,24 @@ class registerController extends Controller
         return view('register.index');
     }
     public function signUp(Request $req){
-        //return view('register.index');
-        $username= $req->Username;
-        $name= $req->name;
-        $password= $req->password;
-        $gender= $req->gender;
-        $collage= $req->collage;
-        $dormitory= $req->dormitory;
-        $data = array('studentId'=>$username,
-                    'name'=>$name,
-                    'password'=>$password,
-                    'sex'=>$gender,
-                    'collage'=>$collage,
-                    'dormitory'=>$dormitory);
+        $user = new stmodel();
+       
+
+        $user->studentId     = $req->Username;
+        $user->name          = $req->name;
+        $user->password      = $req->password;
+        $user->sex           = $req->gender;
+        $user->major         = 'unselect';
+        $user->collage       = $req->collage;
+        $user->dormitory     = $req->dormitory;
+
+
+
+        if($user->save()){
+            return redirect()->route('login');
+        }else{
+            return back();
+        }
                     
     }
 }
