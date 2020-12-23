@@ -9,6 +9,6 @@ class adminController extends Controller
     //
     function index(){
         //echo "Success";
-        return view('login.index');
+        return view('login.admin');
     }
 }

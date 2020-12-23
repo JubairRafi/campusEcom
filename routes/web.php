@@ -16,3 +16,4 @@ Route::get('/login','loginController@index');
 Route::get('/admin','adminController@index');
 
 Route::get('/register','registerController@index')->name('register');
+Route::get('/adminLogin','adminController@index')->name('adminLogin');
