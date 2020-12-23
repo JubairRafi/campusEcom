@@ -13,4 +13,5 @@
 
 Route::get('/','homeController@index');//->name('home.index');
 Route::get('/login','loginController@index');
+Route::post('/login','loginController@verify');
 Route::get('/admin','adminController@index');

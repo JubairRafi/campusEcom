@@ -32,7 +32,7 @@
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('/assets/images/bg-01.jpg');">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" method="post">
 					<span class="login100-form-logo">
 						<i class="zmdi zmdi-landscape"></i>
 					</span>
@@ -56,6 +56,7 @@
 						<label class="label-checkbox100" for="ckb1">
 							Remember me
 						</label>
+						<span>{{session('msg')}}</span>
 					</div>
 
 					<div class="container-login100-form-btn">
@@ -69,6 +70,7 @@
 							Forgot Password?
 						</a>
 					</div>
+					
 				</form>
 			</div>
 		</div>
