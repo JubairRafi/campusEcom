@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/','homeController@index')->name('home.index');
-Route::get('/login','loginController@index')->name('login.index');
-Route::get('/logout','logoutController@index')->name('logout.index');
+Route::get('/','homeController@index');//->name('home.index');
+Route::get('/login','loginController@index');
+Route::get('/admin','adminController@index');

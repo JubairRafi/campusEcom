@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class loginController extends Controller
+class adminController extends Controller
 {
     //
     function index(){
