@@ -15,7 +15,7 @@ Route::get('/','homeController@index');//->name('home.index');
 Route::get('/login','loginController@index');
 
 Route::post('/login','loginController@verify');
-Route::get('/admin','adminController@index');
+Route::get('/admin','adminController@adminDash')->name('admin.index');
 
 
 Route::get('/register','registerController@index')->name('register');

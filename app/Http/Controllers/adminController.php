@@ -11,4 +11,8 @@ class adminController extends Controller
         //echo "Success";
         return view('login.admin');
     }
+
+    public function adminDash(){
+        return view('admin.adminComodity');
+    }
 }
