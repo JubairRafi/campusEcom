@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\orderList;
 
 class accountController extends Controller
 {
@@ -19,6 +20,7 @@ class accountController extends Controller
     }
 
     public function orderList(){
-        return view('myAccount.orderlist');
+        $order  = orderList::all();
+        return view('myAccount.orderlist')->with('order', $order);
     }
 }
