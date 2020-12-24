@@ -19,8 +19,11 @@ class accountController extends Controller
         return view('myAccount.editProfilePic');
     }
 
-    public function orderList(){
-        $order  = orderList::all();
+    public function orderList(Request $req){
+        $order = orderList::where('studentId',$req->session()->get('username'))
+                            ->get();
+        
+      
         return view('myAccount.orderlist')->with('order', $order);
     }
 }
