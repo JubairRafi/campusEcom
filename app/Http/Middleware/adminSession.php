@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class verifySession
+class adminSession
 {
     /**
      * Handle an incoming request.
@@ -15,11 +15,11 @@ class verifySession
      */
     public function handle($request, Closure $next)
     {
-        if($request->session()->has('username')){
+        if($request->session()->has('foradminsession')){
             return $next($request);
          }else{
              $request->session()->flash('msg', 'invalid request...');
-                return redirect()->route('login');
+                return redirect()->route('adminLogin');
              }
     }
 }

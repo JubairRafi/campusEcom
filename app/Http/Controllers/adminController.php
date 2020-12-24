@@ -19,12 +19,13 @@ class adminController extends Controller
                 ->get();
                 if(count($users) > 0){
                     $req->session()->put('username', $req->username);
+                    $req->session()->put('foradminsession', 'foradmin');
                     $req->session()->put('type', $req->username);
                     
                     return redirect()->route('adminDashboard');
                 }else{
                     $req->session()->flash('msg', 'invalid username or password');
-                    return redirect()->route('login');
+                    return redirect()->route('adminLogin');
                 }
     }
 

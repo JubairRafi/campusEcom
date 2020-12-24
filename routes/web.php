@@ -17,8 +17,8 @@ Route::get('/login','loginController@index')->name('login');
 Route::get('/logout','logoutController@index')->name('logout');
 
 Route::post('/login','loginController@verify');
-Route::get('/admin','adminController@adminDash')->name('adminDashboard');
-Route::get('/admin/transactions','adminController@transactions')->name('transactions');
+Route::get('/admin','adminController@adminDash')->name('adminDashboard')->middleware('adminSess');
+Route::get('/admin/transactions','adminController@transactions')->name('transactions')->middleware('adminSess');
 
 
 Route::get('/register','registerController@index')->name('register');

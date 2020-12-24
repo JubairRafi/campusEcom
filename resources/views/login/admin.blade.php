@@ -36,7 +36,9 @@
 					<span class="login100-form-title p-b-51">
 						Admin Login
 					</span>
-
+					<h5 style="color: red">
+						{{session('msg')}}
+					</h5>
 					
 					<div class="wrap-input100 validate-input m-b-16" data-validate = "Username is required">
 						<input class="input100" type="text" name="username" placeholder="Username">
@@ -55,12 +57,6 @@
 							<label class="label-checkbox100" for="ckb1">
 								Remember me
 							</label>
-						</div>
-
-						<div>
-							<a href="#" class="txt1">
-								Forgot?
-							</a>
 						</div>
 					</div>
 
