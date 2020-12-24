@@ -56,14 +56,14 @@
             
 
             <!-- Nav Item - Charts -->
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="{{route('adminDashboard')}}">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Commodities</span></a>
             </li>
 
             <!-- Nav Item - Tables -->
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="{{route('transactions')}}">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Transaction</span></a>
@@ -71,7 +71,7 @@
 
             <li class="nav-item">
                 <a class="nav-link" href="{{route('logout')}}">
-                <i class="fa fa-sign-out" aria-hidden="true"></i>
+                    <i class="fa-sign-out"></i>
                     <span>Logout</span></a>
             </li>
 
@@ -112,8 +112,8 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Commodities</h1>
-                    <p class="mb-4">All the Commodities</p>
+                    <h1 class="h3 mb-2 text-gray-800">Transactions</h1>
+                    <p class="mb-4">All the transaction</p>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
@@ -125,22 +125,20 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Price</th>
-                                            <th>Quantity</th>
-                                            <th>Picture</th>
+                                            <th>Transaction ID</th>
                                             <th>Student ID</th>
-                                            <th>Action</th>
+                                            <th>Commodity Name</th>
+                                            <th>Quantity</th>
+                                            <th>Price</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Price</th>
-                                            <th>Quantity</th>
-                                            <th>Picture</th>
+                                            <th>Transaction ID</th>
                                             <th>Student ID</th>
-                                            <th>Action</th>
+                                            <th>Commodity Name</th>
+                                            <th>Quantity</th>
+                                            <th>Price</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
@@ -150,9 +148,8 @@
                                             <td>Edinburgh</td>
                                             <td>61</td>
                                             <td>2011/04/25</td>
-                                            <td><button type="button" class="btn btn-danger">Delete</button></td>
                                         </tr>
-                                       
+                                        
                                     </tbody>
                                 </table>
                             </div>

@@ -21,16 +21,20 @@ class adminController extends Controller
                     $req->session()->put('username', $req->username);
                     $req->session()->put('type', $req->username);
                     
-                    return redirect('/');
+                    return redirect()->route('adminDashboard');
                 }else{
                     $req->session()->flash('msg', 'invalid username or password');
-                    return redirect('/login');
+                    return redirect()->route('login');
                 }
     }
 
 
     public function adminDash(){
         return view('admin.adminComodity');
+    }
+
+    public function transactions(){
+        return view('admin.transaction');
     }
 
 }
