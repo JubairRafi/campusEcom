@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\orderList;
+use App\stmodel;
 
 class accountController extends Controller
 {
@@ -11,8 +12,35 @@ class accountController extends Controller
         return view('home.my-account');
     }
 
-    public function editLog(){
-        return view('myAccount.editPersonal');
+    public function editLog(Request $req){
+        $user = stmodel::where('studentId',$req->session()->get('username'))
+                        ->get();    
+        return view('myAccount.editPersonal')->with('user', $user);
+    }
+
+    public function updatePersonal( Request $req){
+
+        $user = stmodel::where('studentId',$req->session()->get('username'))
+                        ->first();
+
+        $user->studentId     = $req->Username;
+        $user->name          = $req->name;
+        $user->password      = $req->password;
+        $user->mobile        = $req->mobile;
+        $user->collage       = $req->collage;
+        $user->dormitory     = $req->dormitory;
+
+        if ($user->save()) {
+            return redirect()->route('myAccount');
+        }else{
+            return back();
+        }
+        
+
+        
+
+        
+        
     }
 
     public function editProfilePic(){

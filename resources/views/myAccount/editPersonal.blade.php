@@ -26,13 +26,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="agileits-top">
 				<form method="post">
                     @csrf
-					<input class="text" type="text" name="Username" placeholder="Username/student Id" required="">
-                    <input class="text" type="text" name="name" placeholder="name" required="">
-                    <input class="text" type="password" name="password" placeholder="Password" required="">
-                    <input class="text w3lpass" type="password" name="password" placeholder="Confirm Password" required="">
-                    <input class="text" type="text" name="mobile" placeholder="mobile" required="">
-					<input class="text" type="text" name="collage" placeholder="collage" required="">
-                    <input class="text" type="text" name="dormitory" placeholder="dormitory" required="">
+					<input class="text" type="text" name="Username" placeholder="Username/student Id" required="" value="{{$user[0]['studentId']}}" readonly>
+                    <input class="text" type="text" name="name" placeholder="name" required="" value="{{$user[0]['name']}}">
+					<input class="text" type="password" name="password" id="myInput" placeholder="Password" required="" value="{{$user[0]['password']}}">
+					<input type="checkbox" onclick="myFunction()" value="Show Password">
+                    <input class="text" type="text" name="mobile" placeholder="mobile" required="" value="{{$user[0]['mobile']}}">
+					<input class="text" type="text" name="collage" placeholder="collage" required="" value="{{$user[0]['collage']}}">
+                    <input class="text" type="text" name="dormitory" placeholder="dormitory" required="" value="{{$user[0]['dormitory']}}">
 					<input type="submit" value="UPDATE">
 				</form>
 			</div>
@@ -52,5 +52,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</ul>
 	</div>
 	<!-- //main -->
+
+	<script>
+			function myFunction() {
+			var x = document.getElementById("myInput");
+			if (x.type === "password") {
+				x.type = "text";
+			} else {
+				x.type = "password";
+			}
+			}
+</script>
 </body>
 </html>
