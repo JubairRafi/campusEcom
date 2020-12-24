@@ -19,6 +19,7 @@ class loginController extends Controller
                 if(count($users) > 0){
                     $req->session()->put('username', $req->username);
                     $req->session()->put('type', $req->username);
+                    $req->session()->put('logged', 'logged');
                     
                     return redirect('/');
                 }else{
