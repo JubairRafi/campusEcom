@@ -18,6 +18,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
 <!-- //web font -->
 </head>
+<style>
+	.centerIMG {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+</style>
 <body>
 	<!-- main -->
 	<div class="main-w3layouts wrapper">
@@ -26,7 +34,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="agileits-top">
 				<form method="post" enctype="multipart/form-data">
 					@csrf
-					<input type="file" name="myPic" placeholder="profilePicture" required="">
+					<img class='centerIMG' src="{{asset('upload/'.$user[0]['picture'])}}" width="200px" height="200px">
+					<input class='centerIMG' type="file" name="myPic" placeholder="profilePicture" required="">
 					<input type="submit" value="UPDATE">
 				</form>
 			</div>

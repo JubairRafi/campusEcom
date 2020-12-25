@@ -39,9 +39,11 @@ class accountController extends Controller
         
     }
 
-    public function profilePic(){
-        
-        return view('myAccount.editProfilePic');
+    public function profilePic(Request $req){
+        $user = stmodel::where('studentId',$req->session()->get('username'))
+                        ->get();
+
+        return view('myAccount.editProfilePic')->with('user', $user);
     }
 
     public function editProfilePic(Request $req){
