@@ -40,3 +40,4 @@ Route::get('/deletePersonalCommodity/{id}', 'accountController@commodityDestroy'
 
 Route::get('/sell','accountController@sellInfo')->name('sellCommodity')->middleware('sess');
 Route::post('/sell','accountController@sellcommodity');
+Route::get('/cart','accountController@cart')->name('cart')->middleware('sess');

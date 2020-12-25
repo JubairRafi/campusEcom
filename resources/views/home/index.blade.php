@@ -74,7 +74,7 @@
                 <div class="attr-nav">
                     <ul>
                         <li class="side-menu">
-							<a href="#">
+                        <a href="{{route('cart')}}">
 								<i class="fa fa-shopping-bag"></i>
 								<p>My Cart</p>
 							</a>

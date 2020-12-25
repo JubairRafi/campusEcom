@@ -125,4 +125,8 @@ class accountController extends Controller
         
                     
     }
+
+    public function cart(){
+        return view('myAccount.cart');
+    }
 }
