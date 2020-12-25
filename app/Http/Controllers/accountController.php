@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\orderList;
 use App\stmodel;
+use App\commodityModel;
 
 class accountController extends Controller
 {
@@ -75,5 +76,20 @@ class accountController extends Controller
         
       
         return view('myAccount.orderlist')->with('order', $order);
+    }
+
+    public function personalCommodity(Request $req){
+        $commodity = commodityModel::where('studentId',$req->session()->get('username'))
+                            ->get();
+        return view('myAccount.personalCommodity')->with('commodity', $commodity);
+    }
+
+    public function commodityDestroy($id){
+   
+        commodityModel::find($id)->delete($id);
+      
+        return response()->json([
+            'success' => 'Record deleted successfully!'
+        ]);
     }
 }
