@@ -78,7 +78,10 @@
 								<i class="fa fa-shopping-bag"></i>
 								<p>My Cart</p>
 							</a>
-						</li>
+                        </li>
+                        @if(session('logged')=='logged')
+                        <li class="nav-item"><a class="nav-link" href="{{route('login')}}"><img class="img-profile rounded-circle" src="upload/profile.jpg" alt='pic'></a></li>
+                        @endif
                     </ul>
                 </div>
                 <!-- End Atribute Navigation -->

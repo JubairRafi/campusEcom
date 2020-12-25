@@ -31,5 +31,6 @@ Route::get('/myAccount','accountController@index')->name('myAccount')->middlewar
 Route::get('/personalInfoEditLog','accountController@editLog')->name('editLog')->middleware('sess');
 Route::post('/personalInfoEditLog','accountController@updatePersonal');
 
-Route::get('/profilePicture','accountController@editProfilePic')->name('editProfilePic')->middleware('sess');
+Route::get('/profilePicture','accountController@profilePic')->name('profilePic')->middleware('sess');
+Route::post('/profilePicture','accountController@editProfilePic');
 Route::get('/orderList','accountController@orderList')->name('orderList')->middleware('sess');

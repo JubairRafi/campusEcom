@@ -24,9 +24,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<h1>Profile Picture</h1>
 		<div class="main-agileinfo">
 			<div class="agileits-top">
-				<form method="post">
-                    @csrf
-					<input class="text" type="text" name="myPic" placeholder="profilePicture" required="">
+				<form method="post" enctype="multipart/form-data">
+					@csrf
+					<input type="file" name="myPic" placeholder="profilePicture" required="">
 					<input type="submit" value="UPDATE">
 				</form>
 			</div>

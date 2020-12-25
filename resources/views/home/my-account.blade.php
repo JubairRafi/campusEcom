@@ -126,7 +126,7 @@
                     <div class="account-box">
                         <div class="service-box">
                             <div class="service-icon">
-                                <a href="{{route('editProfilePic')}}"> <i class="fa fa-user"></i> </a>
+                                <a href="{{route('profilePic')}}"> <i class="fa fa-user"></i> </a>
                             </div>
                             <div class="service-desc">
                                 <h4>Profile Picture</h4>

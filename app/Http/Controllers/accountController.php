@@ -35,16 +35,36 @@ class accountController extends Controller
         }else{
             return back();
         }
-        
-
-        
-
-        
+   
         
     }
 
-    public function editProfilePic(){
+    public function profilePic(){
+        
         return view('myAccount.editProfilePic');
+    }
+
+    public function editProfilePic(Request $req){
+        if ($req->hasFile('myPic')) {
+            $file = $req->file('myPic');
+
+            if($file->move('upload', $file->getClientOriginalName())){
+        		
+                $user = stmodel::where('studentId',$req->session()->get('username'))
+                        ->first();
+                
+                $user->picture  = $file->getClientOriginalName();
+
+                if($user->save()){
+                    return redirect()->route('myAccount');
+                }else{
+                    return back();
+                }
+
+        	}else{
+        		return back();
+        	}
+        }
     }
 
     public function orderList(Request $req){
