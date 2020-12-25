@@ -133,6 +133,18 @@
                     </div>
                 </div>
             </li>
+            <li class="text-center">
+                <img src="/home/images/banner-04.jpg" alt="">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="m-b-20"><strong>Welcome To <br> Campus Site Ecomm</strong></h1>
+                            <p class="m-b-40">See how our community comtribute on website in realtime or view <br> shop and spread happiness.</p>
+                            <p><a class="btn hvr-hover" href="/">Shop For Joy</a></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
         </ul>
         <div class="slides-navigation">
             <a href="#" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
@@ -147,19 +159,19 @@
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="shop-cat-box">
-                        <img class="img-fluid" src="/home/images/categories_img_01.jpg" alt="" />
+                        <img class="img-fluid" src="/home/images/chess.jpg" alt="" />
                         <a class="btn hvr-hover" href="/">Fresh</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="shop-cat-box">
-                        <img class="img-fluid" src="/home/images/categories_img_02.jpg" alt="" />
+                        <img class="img-fluid" src="/home/images/table.jpg" alt="" />
                         <a class="btn hvr-hover" href="/">Good Quality</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="shop-cat-box">
-                        <img class="img-fluid" src="/home/images/categories_img_03.jpg" alt="" />
+                        <img class="img-fluid" src="/home/images/gaming.jpg" alt="" />
                         <a class="btn hvr-hover" href="/">Happiness</a>
                     </div>
                 </div>
