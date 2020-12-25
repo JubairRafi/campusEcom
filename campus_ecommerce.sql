@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 24, 2020 at 09:58 PM
+-- Generation Time: Dec 25, 2020 at 01:53 AM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.8
 
@@ -61,8 +61,7 @@ CREATE TABLE `commodities` (
 --
 
 INSERT INTO `commodities` (`commoditiesId`, `name`, `price`, `picture`, `quantity`, `studentId`) VALUES
-(1, 'Body spray', 50, '', 2, 1),
-(2, 'Guitar', 2000, '', 3, 2);
+(1, 'Body spray', 50, '', 2, 1722);
 
 -- --------------------------------------------------------
 
@@ -74,8 +73,17 @@ CREATE TABLE `orderlist` (
   `orderid` int(5) NOT NULL,
   `commodityName` varchar(30) NOT NULL,
   `quantity` int(10) NOT NULL,
-  `price` int(15) NOT NULL
+  `price` int(15) NOT NULL,
+  `studentId` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `orderlist`
+--
+
+INSERT INTO `orderlist` (`orderid`, `commodityName`, `quantity`, `price`, `studentId`) VALUES
+(2, 'Guitar', 1, 2000, 1722),
+(3, 'Body spray', 1, 50, 1722);
 
 -- --------------------------------------------------------
 
@@ -96,8 +104,8 @@ CREATE TABLE `transaction` (
 --
 
 INSERT INTO `transaction` (`transactionid`, `commodiesName`, `studentId`, `price`, `date`) VALUES
-(1, 'Guitar', 1, 2000, '2020-12-08'),
-(2, 'Body spray', 2, 50, '2020-12-09');
+(1, 'Guitar', 1722, 2000, '2020-12-08'),
+(2, 'Body spray', 1733, 50, '2020-12-09');
 
 -- --------------------------------------------------------
 
@@ -108,10 +116,11 @@ INSERT INTO `transaction` (`transactionid`, `commodiesName`, `studentId`, `price
 CREATE TABLE `user_table` (
   `studentId` int(15) NOT NULL,
   `name` varchar(20) NOT NULL,
+  `picture` varchar(100) NOT NULL,
   `sex` varchar(5) NOT NULL,
   `collage` varchar(50) NOT NULL,
   `major` varchar(9) NOT NULL,
-  `dormitory` varchar(10) NOT NULL,
+  `dormitory` varchar(30) NOT NULL,
   `password` varchar(30) NOT NULL,
   `mobile` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -120,9 +129,9 @@ CREATE TABLE `user_table` (
 -- Dumping data for table `user_table`
 --
 
-INSERT INTO `user_table` (`studentId`, `name`, `sex`, `collage`, `major`, `dormitory`, `password`, `mobile`) VALUES
-(1, 'jubair', 'male', 'ABC', 'CSE', 'Yes', '12345', ''),
-(2, 'pial', 'male', 'dfr', 'unselect', '5', '1234567', '');
+INSERT INTO `user_table` (`studentId`, `name`, `picture`, `sex`, `collage`, `major`, `dormitory`, `password`, `mobile`) VALUES
+(1722, 'Rafi', '1.png', 'male', 'ABC collage', 'unselect', 'dormitory  NO 5', '1234567', '01997405977'),
+(1733, 'jubair', '', 'male', 'ABC', 'CSE', 'Yes', '12345', '');
 
 --
 -- Indexes for dumped tables
@@ -178,7 +187,7 @@ ALTER TABLE `commodities`
 -- AUTO_INCREMENT for table `orderlist`
 --
 ALTER TABLE `orderlist`
-  MODIFY `orderid` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `orderid` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `transaction`
@@ -190,7 +199,7 @@ ALTER TABLE `transaction`
 -- AUTO_INCREMENT for table `user_table`
 --
 ALTER TABLE `user_table`
-  MODIFY `studentId` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `studentId` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1734;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
