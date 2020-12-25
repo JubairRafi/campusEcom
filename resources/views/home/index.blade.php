@@ -80,7 +80,7 @@
 							</a>
                         </li>
                         @if(session('logged')=='logged')
-                        <li class="nav-item"><a class="nav-link" href="{{route('login')}}"><img class="img-profile rounded-circle" src="upload/profile.jpg" alt='pic'></a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{route('myAccount')}}"><img class="img-profile rounded-circle" src="{{asset('upload/'.$user[0]['picture'])}}" alt='pic'width="30px" height="30px"></a></li>
                         @endif
                     </ul>
                 </div>
