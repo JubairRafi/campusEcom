@@ -16,6 +16,7 @@ class adminController extends Controller
     }
 
     public function verify(Request $req){
+        
         $users=adminModel::where('teacherId',$req->username)
                 ->where('password', $req->pass)
                 ->get();
