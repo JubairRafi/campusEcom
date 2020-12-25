@@ -18,6 +18,7 @@ Route::get('/logout','logoutController@index')->name('logout');
 
 Route::post('/login','loginController@verify');
 Route::get('/admin','adminController@adminDash')->name('adminDashboard')->middleware('adminSess');
+Route::get('/delete/{id}', 'adminController@commodityDestroy');
 Route::get('/admin/transactions','adminController@transactions')->name('transactions')->middleware('adminSess');
 
 

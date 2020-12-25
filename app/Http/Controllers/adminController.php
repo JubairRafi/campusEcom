@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\adminModel;
+use App\commodityModel;
+use App\transactionModel;
 
 class adminController extends Controller
 {
@@ -31,11 +33,26 @@ class adminController extends Controller
 
 
     public function adminDash(){
-        return view('admin.adminComodity');
+
+        $Commodities = commodityModel::all();
+
+        return view('admin.adminComodity')->with('data', $Commodities);
+    }
+
+    public function commodityDestroy($id){
+   
+        commodityModel::find($id)->delete($id);
+      
+        return response()->json([
+            'success' => 'Record deleted successfully!'
+        ]);
     }
 
     public function transactions(){
-        return view('admin.transaction');
+        
+        $Transaction = transactionModel::all();
+
+        return view('admin.transaction')->with('data', $Transaction);
     }
 
 }

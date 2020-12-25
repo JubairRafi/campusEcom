@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Campus site Ecomm</title>
 
@@ -125,34 +126,38 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
+                                            <th>Commodioty ID</th>
                                             <th>Name</th>
                                             <th>Price</th>
-                                            <th>Quantity</th>
                                             <th>Picture</th>
+                                            <th>Quantity</th>
                                             <th>Student ID</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
+                                            <th>Commodioty ID</th>
                                             <th>Name</th>
                                             <th>Price</th>
-                                            <th>Quantity</th>
                                             <th>Picture</th>
+                                            <th>Quantity</th>
                                             <th>Student ID</th>
                                             <th>Action</th>
                                         </tr>
                                     </tfoot>
-                                    <tbody>
-                                        <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>61</td>
-                                            <td>2011/04/25</td>
-                                            <td><button type="button" class="btn btn-danger">Delete</button></td>
-                                        </tr>
-                                       
+                                    <tbody id="tableId">
+                                        @for($i = 0; $i < count($data); $i++)
+                                            <tr id="{{$data[$i]['studentId']}}">
+                                                <td>{{$data[$i]['commoditiesId']}}</td>
+                                                <td>{{$data[$i]['name']}}</td>
+                                                <td>{{$data[$i]['price']}}</td>
+                                                <td>{{$data[$i]['picture']}}</td>
+                                                <td>{{$data[$i]['quantity']}}</td>
+                                                <td>{{$data[$i]['studentId']}}</td>
+                                                <td><button class="btn btn-danger deleteRecord" data-id="{{$data[$i]['studentId']}}" >Delete</button></td>
+                                            </tr>
+                                        @endfor                                     
                                     </tbody>
                                 </table>
                             </div>
@@ -226,3 +231,24 @@
 </body>
 
 </html>
+
+<script>
+    $(".deleteRecord").click(function(){
+    var id = $(this).data("id");
+    var token = $("meta[name='csrf-token']").attr("content");
+   
+    $.ajax(
+    {
+        url: "delete/"+id,
+        type: 'get',
+        data: {
+            "id": id,
+            "_token": token,
+        },
+        success: function (){
+            $(`#${id}`).remove();
+        }
+    });
+   
+});
+</script>

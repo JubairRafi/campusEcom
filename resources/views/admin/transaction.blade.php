@@ -126,30 +126,31 @@
                                     <thead>
                                         <tr>
                                             <th>Transaction ID</th>
-                                            <th>Student ID</th>
                                             <th>Commodity Name</th>
-                                            <th>Quantity</th>
+                                            <th>Student ID</th>
                                             <th>Price</th>
+                                            <th>Date</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
                                             <th>Transaction ID</th>
-                                            <th>Student ID</th>
                                             <th>Commodity Name</th>
-                                            <th>Quantity</th>
+                                            <th>Student ID</th>
                                             <th>Price</th>
+                                            <th>Date</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                        <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>61</td>
-                                            <td>2011/04/25</td>
-                                        </tr>
-                                        
+                                        @for($i = 0; $i < count($data); $i++)
+                                            <tr>
+                                                <td>{{$data[$i]['transactionid']}}</td>
+                                                <td>{{$data[$i]['commodiesName']}}</td>
+                                                <td>{{$data[$i]['studentId']}}</td>
+                                                <td>{{$data[$i]['price']}}</td>
+                                                <td>{{$data[$i]['date']}}</td>
+                                            </tr>
+                                        @endfor                                     
                                     </tbody>
                                 </table>
                             </div>
