@@ -139,11 +139,24 @@
             </div>
 
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-6">
                     <div class="account-box">
                         <div class="service-box">
                             <div class="service-icon">
                                 <a href="{{route('personalCommodity')}}"> <i class="fa fa-gift"></i> </a>
+                            </div>
+                            <div class="service-desc">
+                                <h4>Personal Commodity</h4>
+                                <p>See your memories</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="account-box">
+                        <div class="service-box">
+                            <div class="service-icon">
+                                <a href="{{route('sellCommodity')}}"> <i class="fa fa-gift"></i> </a>
                             </div>
                             <div class="service-desc">
                                 <h4>Sell Commodity</h4>
@@ -152,8 +165,6 @@
                         </div>
                     </div>
                 </div>
-                
-                
                 
             </div>
             

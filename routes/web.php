@@ -37,3 +37,6 @@ Route::post('/profilePicture','accountController@editProfilePic');
 Route::get('/orderList','accountController@orderList')->name('orderList')->middleware('sess');
 Route::get('/personalCommodity','accountController@personalCommodity')->name('personalCommodity')->middleware('sess');
 Route::get('/deletePersonalCommodity/{id}', 'accountController@commodityDestroy');
+
+Route::get('/sell','accountController@sellInfo')->name('sellCommodity')->middleware('sess');
+Route::post('/sell','accountController@sellcommodity');

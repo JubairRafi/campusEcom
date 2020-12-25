@@ -92,4 +92,37 @@ class accountController extends Controller
             'success' => 'Record deleted successfully!'
         ]);
     }
+
+    public function sellInfo(Request $req){
+        $user = commodityModel::where('studentId',$req->session()->get('username'))
+                        ->get();    
+       
+        return view('myAccount.sellCommodity')->with('user', $user);
+    }
+
+    public function sellcommodity(Request $req){
+
+        if ($req->hasFile('picture')) {
+            $file = $req->file('picture');
+            if ($file->move('upload', $file->getClientOriginalName())) {
+                $commodity = new commodityModel();
+       
+                $commodity->studentId     = $req->studentID;
+                $commodity->name          = $req->commodityName;
+                $commodity->price         = $req->price;
+                $commodity->quantity      = $req->quantity;
+                $commodity->picture       = $file->getClientOriginalName();
+               
+        
+        
+                if($commodity->save()){
+                    return redirect()->route('myAccount');
+                }else{
+                    return back();
+                }
+            }
+        }
+        
+                    
+    }
 }

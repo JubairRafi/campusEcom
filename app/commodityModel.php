@@ -8,5 +8,5 @@ class commodityModel extends Model
 {
     protected $table = "commodities";
     protected $primaryKey =  "commoditiesId";
-    public $timetamps = false;
+    public $timestamps = false;
 }
